@@ -1,0 +1,10 @@
+.team{
+    display: grid;
+    grid-template-columns:1fr 1fr 1fr;
+    grid-column: auto;
+    column-gap:2rem;
+    border:1px solid red;
+}
+.programs{
+   border:1px solid red;
+}

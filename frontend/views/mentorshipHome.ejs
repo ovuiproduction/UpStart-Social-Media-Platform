@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="/startupHome.css">
+    <title>UpStart-Mentorship</title>
+</head>
+<body>
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+    }
+    </script>    
+    <nav class="navbar bg-body-tertiary">
+        <div class="container-fluid">
+          <a href="/postpage"><span class="navbar-brand mb-0 h1">UpStart</span></a>
+        </div>
+        <div class="container-fluid">
+          <div id="google_translate_element"></div>
+        </div>
+      </nav>
+
+    <div class="control">
+      <a href="/addmentorprogram">Add Course</a>
+    </div>
+
+    <div class="searchBlock">
+        <form action="/searchmentor" method="post">
+          <div class="searchInput">
+            <input name="searchele" type="text">
+          </div>
+          <button type="submit">Search</button>
+        </form>
+      </div>
+
+   <div class="blogBlock">
+    <div class="blogs">
+        <% mentorprograms.forEach((mentorprogram) => { %>
+          <div class="blog">
+            <div class="nameSection">
+              <h3><%= mentorprogram.topic  %></h3>
+              <p><%= mentorprogram.name %></p>
+              <p><%= mentorprogram.qulification %></p>
+              <p><%= mentorprogram.date %></p>
+              <p><%= mentorprogram.time %></p>
+              <p><%= mentorprogram.mode %></p>
+              <p><%= mentorprogram.phone %></p>
+              <p><a href="/addvideo/<%= mentorprogram._id %>">Upload Video</a></p>
+              <!-- <p><a href="/viewvideo/<%= mentorprogram._id %>">View-video</a></p> -->
+              <p><a href="/subscribe">subscribe</a></p>
+            </div>
+            <div class="descriptionSection">
+                <h6>Discription</h6>
+                <%= mentorprogram.discription %>
+                <h6 style="margin-top:1rem;">Keypoints</h6>
+                <p><%= mentorprogram.keypoints %></p>
+            </div>
+            <div class="imageBlock"><img src="https://www.intelligenthq.com/wp-content/uploads/2018/07/medical-startups.jpg" alt=""></div>
+          </div>
+        <% }) %>
+    </div>
+   </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+<script>(function(){var pp=document.createElement('script'), ppr=document.getElementsByTagName('script')[0]; stid='RCtERW5lV1hvQXJRU1BoYmxsZklGQT09';pp.type='text/javascript'; pp.async=true; pp.src=('https:' == document.location.protocol ? 'https://' : 'http://') + 's01.live2support.com/dashboardv2/chatwindow/'; ppr.parentNode.insertBefore(pp, ppr);})();</script>
+</html>

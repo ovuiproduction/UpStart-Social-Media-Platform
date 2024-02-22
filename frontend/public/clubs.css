@@ -1,0 +1,27 @@
+body
+{
+    background-color: azure;
+}
+.dark-card {
+    background-color: #212529; /* Dark background color */
+    color: #fff; /* Text color for dark background */
+    border: 1px solid #343a40; /* Border color for dark background */
+    margin-bottom: 80px; /* Add margin between cards */
+}
+
+.dark-card h2,
+.dark-card p {
+    color: #fff; /* Text color for headings and paragraphs inside the card */
+}
+
+.dark-card a.btn-secondary {
+    color: #fff; /* Text color for the button inside the card */
+    background-color: #6c757d; /* Button background color for dark background */
+    border-color: #6c757d; /* Button border color for dark background */
+}
+
+.dark-card a.btn-secondary:hover,
+.dark-card a.btn-secondary:focus {
+    background-color: #495057; /* Button background color on hover or focus for dark background */
+    border-color: #495057; /* Button border color on hover or focus for dark background */
+}

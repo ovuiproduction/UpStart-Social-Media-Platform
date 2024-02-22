@@ -1,0 +1,94 @@
+body{
+    padding: 0px;
+    margin: 0px;
+    background-color: rgb(208, 236, 249);
+}
+
+.blogBlock{
+    margin-top:3rem;
+    width:100%;
+    height:max-content;
+    padding:1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.blogs{
+    width:100%;
+    height: max-content;
+}
+.blog{
+    margin: auto;
+    width:80%;
+    min-height:12rem;
+    display: flex;
+    margin-bottom:2rem;
+    background-color:white;
+    border-radius:5px;
+}
+.nameSection{
+    width:30%;
+    height:100%;
+}
+.nameSection h3{
+    margin-top:3rem;
+    margin-left:2rem;
+}
+.nameSection p{
+    margin-left:2rem;
+}
+.descriptionSection{
+    padding:1rem;
+    width:40%;
+    height:100%;
+}
+.imageBlock{
+    width:30%;
+    height:auto;
+}
+.imageBlock img{
+    width:100%;
+    height:100%;
+    border-radius:0px 5px 5px 0px;
+}
+
+.control{
+    width:100%;
+    height:max-content;
+    padding: 1rem;
+    border: 1px solid rgb(17, 15, 100);
+    background-color: rgb(44, 60, 76);
+}
+.control a{
+    padding:1rem;
+    text-decoration: none;
+    color:white;
+    font-size:20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight:500;
+}
+
+.searchBlock{
+    width:100%;
+    height:20vh;
+    background-color: azure;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.searchBlock form{
+    width:100%;
+    display: flex;
+    margin-left:30%;
+}
+.searchInput{
+    width:50%;
+}
+
+.searchInput input{
+    width:100%;
+    height:2.5rem;
+    border-radius:5px;
+    border:2px solid black;
+}

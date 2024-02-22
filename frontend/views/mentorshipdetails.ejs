@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/startupprofile.css"/>
+    <link rel="stylesheet" href="mentorshipdetails.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <title>Upstart-StartUPDetails</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="logo">
+          <div class="logotext">StartUp</div>
+        </div>
+      </nav>
+    </header>
+    <div class="introBlock">
+      <div class="intromainblock">
+        <div class="startuplogoblock">
+          <div class="logoimg"><img src="https://media.licdn.com/dms/image/D4D0BAQFgbGMMts2R1g/company-logo_200_200/0/1688813624694/astromedicomp_logo?e=2147483647&v=beta&t=dwUDlB_e00gV4X3WGc9iTPUNFvJI14B-CeBeBLqip0U" alt=""/></div>
+          <div class="logotext">
+            <h5><%= mentorship.name %></h5>
+            <p>By <%= mentorship.mentorname %></p>
+            <p><%= mentorship.qualification %></p>
+          </div>
+        </div>
+          <div class="discriptionBlock">
+            <p>
+              <%= mentorship.discription %>
+            </p>
+          </div>
+      </div>
+    </div>
+
+
+    <div class="contactBlock">
+        <div class="contactOption">
+        <div class="emailBlock"><%= mentorship.time %></div>
+        <div class="contactNo"><%= mentorship.phone %></div>
+    </div>
+    </div>
+
+<div class="teammemberBlock">
+    <h1 class="teamheader">Team Members</h1>
+    <div class="team">
+      <div class="programs"></div>
+    </div>
+    </div>
+    <div class="statisticsStartup">
+        <h2>Startup Key points</h2>
+        <p><%= mentorship.keypoints %></p>
+    </div>
+  </body>
+</html>

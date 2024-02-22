@@ -1,0 +1,322 @@
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f8fafc;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100vh;
+}
+
+#circle {
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  -webkit-animation: rotate 3s infinite linear;
+  animation: rotate 3s infinite linear;
+  transform-box: fill-box;
+}
+
+@-webkit-keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+.form {
+  width: 780px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  border-radius: 10px;
+  display: flex;
+  background: #fff;
+}
+
+.form__left {
+  -ms-flex-preferred-size: 40%;
+  flex-basis: 40%;
+  text-align: center;
+}
+
+.form__right {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding: 10px;
+  font-family: "Lexend Deca";
+  color: #064b8d;
+}
+
+.form__right span {
+  display: block;
+}
+
+.form_right_steps {
+  color: #064b8d75;
+  margin-bottom: 12px;
+}
+
+.form_right_title {
+  margin-bottom: 10px;
+}
+
+.form_right_info {
+  font-size: 17px;
+  margin-bottom: 20px;
+}
+
+.form_right_check {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.form_right_check input[type="radio"] {
+  display: none;
+}
+
+.form_right_check--creditCard {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  background: #fcfdfc;
+  margin-right: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+  -ms-flex-pack: space-evenly;
+  justify-content: space-evenly;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 4px;
+  border: 1px solid #dfe5ec;
+  position: relative;
+}
+
+.form_right_check--creditCard::after {
+  content: "";
+  border: 3px solid #dfe5ec;
+  height: 20px;
+  width: 20px;
+  display: block;
+  border-radius: 50%;
+}
+
+.form_rightcheck--creditCard_icon {
+  width: 46px;
+}
+
+.form_right_check--creditCard,
+.form_right_check--payPal {
+  padding: 10px 0 10px 0;
+  cursor: pointer;
+}
+
+.form_right_check--payPal {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  background: #fcfdfc;
+  border: 1px solid #dfe5ec;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+  -ms-flex-pack: space-evenly;
+  justify-content: space-evenly;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 4px;
+  position: relative;
+}
+
+.form_right_check--payPal::after {
+  content: "";
+  border: 3px solid #dfe5ec;
+  height: 20px;
+  width: 20px;
+  display: block;
+  border-radius: 50%;
+}
+
+.form_rightcheck--payPal_icon {
+  width: 136px;
+}
+
+.form_right_form-control {
+  margin-top: 10px;
+}
+
+.form_right_form-control--name {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form_right_form-control--cardNumber {
+  height: 45px;
+  width: 100%;
+  background: #fffffc;
+  border: none;
+  font-size: 18px;
+  padding: 0 10px 0 10px;
+  border: 1px solid #dfe5ec;
+  border-radius: 2px;
+  color: #949393;
+}
+
+.form_right_form-control--cardNumber:focus {
+  outline: none;
+  border-color: blue;
+}
+
+.form_right_form-control--button {
+  width: 60%;
+  margin-top: 10px;
+  padding: 15px 10px;
+  border: none;
+  background: #064b8d;
+  color: #fff;
+  border-radius: 2px;
+  outline: none;
+  cursor: pointer;
+}
+
+.form_right_form-control--button:hover {
+  background: #0c3a65;
+}
+
+#option1:checked ~ .form_right_check--creditCard {
+  border-color: blue;
+}
+
+#option1:checked ~ .form_right_check--creditCard::after {
+  border-color: green;
+  outline: 2px solid green;
+  outline-offset: -10px;
+  outline-style: dotted;
+}
+
+#option2:checked ~ .form_right_check--payPal {
+  border-color: blue;
+}
+
+#option2:checked ~ .form_right_check--payPal::after {
+  border-color: green;
+  outline: 2px solid green;
+  outline-offset: -10px;
+  outline-style: dotted;
+}
+
+.form_right_expireDate {
+  -ms-flex-preferred-size: 60%;
+  flex-basis: 60%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.form_right_expireDate--month {
+  height: 45px;
+  background: #fffffc;
+  border: none;
+  font-size: 18px;
+  padding: 0 10px 0 10px;
+  border: 1px solid #dfe5ec;
+  border-radius: 2px;
+  color: #949393;
+  width: 48%;
+}
+
+.form_right_expireDate--month:focus {
+  outline: none;
+  border-color: blue;
+}
+
+.form_right_expireDate--year {
+  width: 48%;
+  height: 45px;
+  background: #fffffc;
+  border: none;
+  font-size: 18px;
+  padding: 0 10px 0 10px;
+  border: 1px solid #dfe5ec;
+  border-radius: 2px;
+  color: #949393;
+}
+
+.form_right_expireDate--year:focus {
+  outline: none;
+  border-color: blue;
+}
+
+.form_rightexpireDate_left {
+  margin-left: 5px;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.form_rightexpireDate_left--cvc {
+  height: 45px;
+  width: 100%;
+  background: #fffffc;
+  border: none;
+  font-size: 18px;
+  padding: 0 10px 0 10px;
+  border: 1px solid #dfe5ec;
+  border-radius: 2px;
+  color: #949393;
+}
+
+.form_rightexpireDate_left--cvc:focus {
+  outline: none;
+  border-color: blue;
+}
+
+.expireDateForm {
+  -ms-flex-preferred-size: 60%;
+  flex-basis: 60%;
+}
+/*# sourceMappingURL=main.css.map */

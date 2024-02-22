@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/postpage.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/630e6cad6a.js" crossorigin="anonymous"></script>
+    <title>UpStart</title>
+</head>
+<body>
+
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+}
+</script>
+
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+      <nav>
+        <div class="logo">
+            <div class="logoimg"><img src="Assest/image/logo.png" alt=""></div>
+            <a style="text-decoration: none;color:rgb(24, 24, 60);" href="/"><div class="logotext">UpStart</div></a>
+        </div>
+        <div class="listnav">
+            <ul>
+                <li>
+                    <div id="google_translate_element"></div>
+                </li>
+                <li>
+                    <a href="/startuphome">Startup</a>
+                </li>
+                <li>
+                    <a href="/mentorship">Mentorship</a>
+                </li>
+                <li>
+                    <a href="/message">Message</a>
+                </li>
+                <li>
+                    <a href="/clubs">Clubs</a>
+                </li>
+            </ul>
+        </div>
+      </nav>
+
+    <div class="container">
+        <h1>Share Your Thoughts</h1>
+        <form action="/upload" method="post" enctype="multipart/form-data">
+            <textarea name="text" placeholder="Your thoughts..." ></textarea>
+            <input type="file" name="myImage" accept="image/*">
+            <button type="submit">Share</button>
+        </form>
+
+        <div id="posts-container" class="postContainer">
+            <% posts.forEach(post => { %>
+                <div class="post">
+                    <p class="posttext"><%= post.text %></p>
+                    <div class="postmedia">
+                    <% if (post.image !== "") { %>
+                        <img src="/images/<%= post._id %>" alt="">
+                    <% } else if (post.video !== "") { %>
+                        <video src="/<%= post.video %>" controls></video>
+                    <% } %>
+                    </div>
+                    <div class="postStatistics">
+                        <div class="likepost">
+                            <a href="/likepost/<%= post._id %>"><i class="fa-regular fa-thumbs-up"></i></a>
+                            <p class="postlikeno"><%= post.like %></p>
+                        </div>
+                        <div class="comments"><a class="commentsicon" href="/comments/<%= post._id %>"><i class="fa-regular fa-comment"></i></a></div>
+                    </div>
+                </div>
+            <% }); %>
+        </div>
+        <script>
+            async function fetchAndDisplayPosts() {
+                try {
+                    const response = await fetch('/postpag');
+                    const posts = await response.json();
+    
+                    const postsContainer = document.getElementById('posts-container');
+                    postsContainer.innerHTML = '';
+    
+                    posts.forEach(post => {
+                        const postElement = document.createElement('div');
+                        postElement.classList.add('post');
+    
+                        const textElement = document.createElement('p');
+                        textElement.innerText = post.text;
+                        postElement.appendChild(textElement);
+    
+                        if (post.image) {
+                            const imgElement = document.createElement('img');
+                            imgElement.src = `/images/${post._id}`;
+                            imgElement.alt = 'Uploaded Image';
+                            postElement.appendChild(imgElement);
+                        }
+    
+                        postsContainer.appendChild(postElement);
+                    });
+                } catch (error) {
+                    console.error('Error fetching posts:', error);
+                }
+            }
+    
+            // Fetch and display posts when the page loads
+            fetchAndDisplayPosts();
+        </script>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+<script>(function(){var pp=document.createElement('script'), ppr=document.getElementsByTagName('script')[0]; stid='RCtERW5lV1hvQXJRU1BoYmxsZklGQT09';pp.type='text/javascript'; pp.async=true; pp.src=('https:' == document.location.protocol ? 'https://' : 'http://') + 's01.live2support.com/dashboardv2/chatwindow/'; ppr.parentNode.insertBefore(pp, ppr);})();</script>
+</html>

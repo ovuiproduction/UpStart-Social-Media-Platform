@@ -1,0 +1,66 @@
+body{
+    margin: 0px;
+    padding: 0px;
+}
+
+.header{
+    width:100%;
+    height:10vh;
+    background-color: rgb(176, 212, 244);
+    color:rgb(57, 10, 100);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight:550;
+    font-size:25px;
+}
+.maincontainer{
+    width:100%;
+    height:83vh;
+    display: flex;
+    justify-content:space-between;
+}
+.commentsBlock{
+    width:60%;
+    height:100%;
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.commentsWriteBlock{
+    width:35%;
+    min-height:100%;
+    overflow-y:auto;
+}
+
+.mainCommentsBlock{
+    width:80%;
+    height:90%;
+    margin-top:3rem;
+    overflow:scroll;
+}
+
+.commentBox{
+    padding:1rem;
+    width:70%;
+    height:max-content;
+    border:1px solid rgb(36, 43, 66);
+    background-color:rgb(231, 241, 252);
+    border-radius:0px 30px 0px 30px;
+    text-align: justify;
+    color: rgb(14, 3, 24);
+    margin-bottom:2rem;
+}
+::-webkit-scrollbar{
+    width:0px;
+}
+.commentsWriteBlock form{
+    width:90%;
+    margin: auto;
+    height:max-content;
+    background-color: aliceblue;
+    padding:1rem;
+    margin-top:5rem;
+}
